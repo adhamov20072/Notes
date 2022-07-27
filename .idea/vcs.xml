@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Notally" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Room_for_student" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SharedPreference" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/chala-vazifa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ismlar" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mylogin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/myroom" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/singleactivity" vcs="Git" />
+  </component>
+</project>
