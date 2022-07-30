@@ -18,5 +18,11 @@
         android:id="@+id/addFragment"
         android:name="com.alimardon.notes.addFragment"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <argument
+            android:name="note"
+            app:argType="com.alimardon.notes.Activity.room.Note"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

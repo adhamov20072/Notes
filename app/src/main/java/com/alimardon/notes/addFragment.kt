@@ -28,7 +28,7 @@ class addFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (args.note == !null) {
+        if (args.note !=null) {
             binding.btn.setText("Update")
             binding.ed1.setText(args.note!!.title)
             binding.ed2.setText(args.note!!.description)
@@ -43,8 +43,10 @@ class addFragment : Fragment() {
                 }
             } else {
                 val note = Note(0, binding.ed1.text.toString(), binding.ed2.text.toString())
-                NoteDataBase.DatabaseBuilder.getdatabase(requireContext()).noteDao()
-                    .insertNote(note)
+                GlobalScope.launch(Dispatchers.IO) {
+                    NoteDataBase.DatabaseBuilder.getdatabase(requireContext()).noteDao()
+                        .insertNote(note)
+                }
             }
         }
             findNavController().popBackStack(R.id.addFragment,true)

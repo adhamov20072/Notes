@@ -36,7 +36,7 @@ class viewFragment : Fragment() {
             }
 
             override fun update(note: Note) {
-                val action = viewFragmentDirections.action_viewFragment_to_addFragment(note)
+                val action=viewFragmentDirections.actionViewFragmentToAddFragment(note)
                 findNavController().navigate(action)
             }
         })
@@ -49,12 +49,15 @@ class viewFragment : Fragment() {
     }
 
     fun setlist() {
-        val notes =
-            NoteDataBase.DatabaseBuilder.getdatabase(requireContext()).noteDao().getAllNotes()
-        adapter.submitList(notes)
+            val notes =
+                NoteDataBase.DatabaseBuilder.getdatabase(requireContext()).noteDao().getAllNotes()
+            adapter.submitList(notes)
+
     }
 
     suspend fun deleteNote(note: Note) {
-        NoteDataBase.DatabaseBuilder.getdatabase(requireContext()).noteDao().deleteNote(note)
+        GlobalScope.launch(Dispatchers.IO) {
+            NoteDataBase.DatabaseBuilder.getdatabase(requireContext()).noteDao().deleteNote(note)
+        }
     }
 }
